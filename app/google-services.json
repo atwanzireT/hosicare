@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831249661442",
+    "project_id": "hosicare",
+    "storage_bucket": "hosicare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831249661442:android:e848d8ca4940fd5e02311b",
+        "android_client_info": {
+          "package_name": "com.example.hosicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831249661442-j7kglt2rt9b29rspk1gji3ppct826tpu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS7RZeV-ZagzfqGs3LbhhZ78E1TqrDAOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831249661442-j7kglt2rt9b29rspk1gji3ppct826tpu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
