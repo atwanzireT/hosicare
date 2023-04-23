@@ -29,6 +29,10 @@ public class LoginActivity extends AppCompatActivity {
 
         loginbtn = (Button) findViewById(R.id.loginBtn);
 
+        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+            Toast.makeText(getApplicationContext(), "Already Signed in", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this,ChatActivity.class));
+        }
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -24,6 +24,11 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+            Toast.makeText(getApplicationContext(), "Already Signed in", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(SignupActivity.this,ChatActivity.class));
+        }
     }
 
     public void handleSignup(View view) {
