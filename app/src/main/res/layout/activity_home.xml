@@ -77,6 +77,7 @@
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
+                    android:id="@+id/alarmlyBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -123,13 +124,13 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/chatlybtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/textColorPrimary"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
+                    android:id="@+id/chatlybtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

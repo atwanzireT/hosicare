@@ -39,6 +39,24 @@
             />
 
         <EditText
+            android:id="@+id/FirstNameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/LastNameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            />
+
+        <EditText
             android:id="@+id/signupEmailField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

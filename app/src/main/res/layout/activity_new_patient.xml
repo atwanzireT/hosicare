@@ -29,7 +29,7 @@
 
 
         <EditText
-            android:id="@+id/usernameField"
+            android:id="@+id/patUsernameField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="User Name"
@@ -38,7 +38,25 @@
             />
 
         <EditText
-            android:id="@+id/signupEmailField"
+            android:id="@+id/patFirstNameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/patLastNameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/patEmailField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -47,7 +65,7 @@
             />
 
         <EditText
-            android:id="@+id/patCatField"
+            android:id="@+id/patTypeField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Patient"
@@ -56,16 +74,16 @@
             android:layout_marginVertical="5dp"
             />
         <EditText
-            android:id="@+id/patSpecialismField"
+            android:id="@+id/sickofField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Specilist"
+            android:hint="Sick Of"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             />
 
         <EditText
-            android:id="@+id/signupPwdField"
+            android:id="@+id/patPwdField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -73,10 +91,10 @@
             android:layout_marginVertical="5dp"
             />
         <Button
-            android:id="@+id/signupBtn"
-            android:layout_width="match_parent"
+            android:id="@+id/savePatientBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
+            android:text="SAVE"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             android:onClick="handleSignup"

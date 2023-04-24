@@ -15,4 +15,17 @@ public class AdminPanelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_panel);
 
     }
+
+    public void switchToHosp(View view) {
+        startActivity(new Intent(this, NewHospitalActivity.class));
+    }
+
+    public void switchToDoc(View view) {
+        startActivity(new Intent(this, NewDoctorActivity.class));
+
+    }
+
+    public void switchToPat(View view) {
+        startActivity(new Intent(this, NewPatientActivity.class));
+    }
 }

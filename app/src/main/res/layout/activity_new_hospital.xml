@@ -31,10 +31,10 @@
 
 
         <EditText
-            android:id="@+id/usernameField"
+            android:id="@+id/nameField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User Name"
+            android:hint="Name"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             />
@@ -57,10 +57,10 @@
             android:layout_marginVertical="5dp"
             />
         <EditText
-            android:id="@+id/docSpecialismField"
+            android:id="@+id/levelField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Specilist"
+            android:hint="Level"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             />
