@@ -27,7 +27,7 @@ public class SignupActivity extends AppCompatActivity {
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null){
             Toast.makeText(getApplicationContext(), "Already Signed in", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(SignupActivity.this,ChatActivity.class));
+            startActivity(new Intent(SignupActivity.this, HomeActivity.class));
         }
     }
 
@@ -56,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
                                 emailField.setText("");
                                 passwordField.setText("");
                                 Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignupActivity.this, ChatActivity.class));
+                                startActivity(new Intent(SignupActivity.this, HomeActivity.class));
                             }
                             else{
                                 emailField.setText("");
