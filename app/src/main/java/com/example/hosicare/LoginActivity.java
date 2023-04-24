@@ -33,13 +33,13 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Already Signed in", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
         }
-        loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(homeIntent);
-            }
-        });
+//        loginbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+//                startActivity(homeIntent);
+//            }
+//        });
     }
 
 
@@ -65,10 +65,10 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, ChatActivity.class));
                         FirebaseDatabase.getInstance().getReference("user");
-//                    Intent loginIntent = new Intent(LoginActivity.this, homeActivity.class);
-//                    loginIntent.putExtra("email", mAuth.getCurrentUser().getEmail());
-//                    loginIntent.putExtra("uid", mAuth.getCurrentUser().getUid());
-//                    startActivity(loginIntent);
+                        Intent loginIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                        loginIntent.putExtra("email", mAuth.getCurrentUser().getEmail());
+                        loginIntent.putExtra("uid", mAuth.getCurrentUser().getUid());
+                        startActivity(loginIntent);
                     } else {
                         emailField.setText("");
                         passwordField.setText("");

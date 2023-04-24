@@ -41,20 +41,21 @@
             />
         <Button
             android:id="@+id/loginBtn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LOGIN"
             android:textSize="20dp"
+            android:backgroundTint="@color/textColorPrimary"
             android:layout_marginVertical="5dp"
             android:onClick="handleSignin"
             />
-        <TextView
-            android:id="@+id/noAccountTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don't Have an Account"
-            android:onClick="noAccFunc"
-            />
+<!--        <TextView-->
+<!--            android:id="@+id/noAccountTxt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Don't Have an Account"-->
+<!--            android:onClick="noAccFunc"-->
+<!--            />-->
     </LinearLayout>
 
 </LinearLayout>

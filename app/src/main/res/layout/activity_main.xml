@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="HosiCare"
             android:textSize="28dp"
-            android:textColor="@color/design_default_color_primary_dark"/>
+            android:backgroundTint="@color/textColorPrimary"/>
     </LinearLayout>
 
     <LinearLayout
@@ -37,6 +37,7 @@
             android:text="GET STARTED"
             android:textSize="20dp"
             android:onClick="switchToLogin"
+            android:backgroundTint="@color/textColorPrimary"
             />
     </LinearLayout>
 </LinearLayout>

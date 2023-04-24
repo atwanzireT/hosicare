@@ -9,6 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     LinearLayout adminlybtn, chatlybtn, alarmlybtn;
@@ -21,13 +24,18 @@ public class HomeActivity extends AppCompatActivity {
         adminlybtn = (LinearLayout) findViewById(R.id.adminbtn);
         chatlybtn = (LinearLayout) findViewById(R.id.chatlybtn);
         alarmlybtn = (LinearLayout) findViewById(R.id.alarmlyBtn);
-        adminlybtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent adminIntent = new Intent(HomeActivity.this, AdminPanelActivity.class);
-                startActivity(adminIntent);
-            }
-        });
+        if(FirebaseAuth.getInstance().getCurrentUser().getEmail().toString().equals("admin@hosicare.com")){
+            adminlybtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent adminIntent = new Intent(HomeActivity.this, AdminPanelActivity.class);
+                    startActivity(adminIntent);
+                }
+            });
+        }else {
+            Toast.makeText(HomeActivity.this, "Not Admin .", Toast.LENGTH_SHORT).show();
+        }
+
         chatlybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

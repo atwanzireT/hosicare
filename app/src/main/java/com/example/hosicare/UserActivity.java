@@ -13,12 +13,14 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hosicare.modals.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -31,6 +33,7 @@ public class UserActivity extends AppCompatActivity {
     Button logoutBtn, uploadBtn;
     ImageView profileImg;
     private Uri imagePath;
+    TextView userEmailTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,11 @@ public class UserActivity extends AppCompatActivity {
         logoutBtn = findViewById(R.id.logoutBtn);
         profileImg = findViewById(R.id.user_profile_img);
         uploadBtn = findViewById(R.id.upload_photo_btn);
+        userEmailTxt = findViewById(R.id.userEmailTxt);
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            userEmailTxt.setText(currentUser.getEmail());
+        }
 
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -21,7 +21,6 @@ public class NewPatientActivity extends AppCompatActivity {
     EditText usernamefield, fnamefield, lnamefield, emailfield, usertypefield, sickoffield, passwordfield;
     String username, firstname, lastname, email, usertpye, sickof, password;
     Button savebtn;
-    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,6 @@ public class NewPatientActivity extends AppCompatActivity {
         passwordfield = findViewById(R.id.patPwdField);
         savebtn = findViewById(R.id.savePatientBtn);
 
-
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,12 +46,11 @@ public class NewPatientActivity extends AppCompatActivity {
                 usertpye = usertypefield.getText().toString();
                 sickof = sickoffield.getText().toString();
                 password = passwordfield.getText().toString();
-                mAuth = FirebaseAuth.getInstance();
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(firstname) || TextUtils.isEmpty(lastname) || TextUtils.isEmpty(email)
                  || TextUtils.isEmpty(usertpye) || TextUtils.isEmpty(sickof) || TextUtils.isEmpty(password)) {
                     Toast.makeText(NewPatientActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
@@ -63,6 +60,12 @@ public class NewPatientActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
+                                            usernamefield.setText("");
+                                            fnamefield.setText("");
+                                            lnamefield.setText("");
+                                            emailfield.setText("");
+                                            sickoffield.setText("");
+                                            passwordfield.setText("");
                                             Toast.makeText(NewPatientActivity.this, "New Patient Added ...", Toast.LENGTH_SHORT).show();
                                         }
                                         else{
