@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,21 +37,26 @@ public class NewHospitalActivity extends AppCompatActivity {
         location = locationfield.getText().toString();
         level = levelfield.getText().toString();
 
-        FirebaseDatabase.getInstance().getReference("hospital").setValue(new Hospital(name, postoffice, location, level))
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            namefield.setText("");
-                            postofficeField.setText("");
-                            locationfield.setText("");
-                            levelfield.setText("");
-                            Toast.makeText(NewHospitalActivity.this, "New Hospital Saved .", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(NewHospitalActivity.this, "Unsuccessful .", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(name) || (TextUtils.isEmpty(postoffice)) || (TextUtils.isEmpty(location)) || (TextUtils.isEmpty(level))){
+            Toast.makeText(this, "All Fields must be filled .", Toast.LENGTH_SHORT).show();
+        }else{
+            FirebaseDatabase.getInstance().getReference("hospital").setValue(new Hospital(name, postoffice, location, level))
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                namefield.setText("");
+                                postofficeField.setText("");
+                                locationfield.setText("");
+                                levelfield.setText("");
+                                Toast.makeText(NewHospitalActivity.this, "New Hospital Saved .", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(NewHospitalActivity.this, "Unsuccessful .", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+        }
+
 
     }
 }

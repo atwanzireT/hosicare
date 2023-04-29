@@ -65,4 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void switchToTip(View view) {
+        startActivity(new Intent(this, TipsActivity.class));
+    }
 }

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    tools:context=".NewHospitalActivity">
-
+    tools:context=".CreateTipActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true">
 
         <ImageView
             android:layout_width="80dp"
@@ -25,55 +24,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REGISTER HOSPITAL"
+            android:text="CREATE TIP"
             android:textSize="20dp"/>
 
 
 
         <EditText
-            android:id="@+id/nameField"
+            android:id="@+id/titleField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
+            android:hint="Title"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             />
 
         <EditText
-            android:id="@+id/postOfficeField"
+            android:id="@+id/detailField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Post Office"
+            android:hint="detail"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             />
 
-        <EditText
-            android:id="@+id/locationField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Location"
-            android:textSize="20dp"
-            android:layout_marginVertical="5dp"
-            />
-        <EditText
-            android:id="@+id/levelField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Level"
-            android:textSize="20dp"
-            android:layout_marginVertical="5dp"
-            />
 
         <Button
-            android:id="@+id/saveHospBtn"
+            android:id="@+id/savetip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
-            android:onClick="saveDataFunc"
+            android:onClick="saveTipFunc"
             />
     </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>
