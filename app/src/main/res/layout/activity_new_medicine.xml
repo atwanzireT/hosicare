@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateTipActivity">
-
+    tools:context=".NewMedicineActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_margin="10dp"
-        android:layout_centerInParent="true">
+        android:layout_margin="10dp">
 
         <ImageView
             android:layout_width="80dp"
@@ -24,44 +22,46 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CREATE TIP"
+            android:text="Add Medicine"
             android:textSize="20dp"/>
 
 
 
         <EditText
-            android:id="@+id/titleField"
+            android:id="@+id/medNameField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title"
+            android:hint="Name"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
             />
 
         <EditText
-            android:id="@+id/detailField"
+            android:id="@+id/medAgeField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="detail"
+            android:hint="Age"
             android:textSize="20dp"
-            android:inputType="textMultiLine"
-            android:lines="12"
-            android:minLines="12"
-            android:gravity="top"
             android:layout_marginVertical="5dp"
             />
 
+        <EditText
+            android:id="@+id/medtreatmentField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Treatment"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            />
 
         <Button
-            android:id="@+id/savetip"
-            android:layout_width="match_parent"
+            android:id="@+id/medSaveBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:text="SAVE"
             android:textSize="20dp"
             android:layout_marginVertical="5dp"
-            android:onClick="saveTipFunc"
             />
     </LinearLayout>
-
 
 </RelativeLayout>

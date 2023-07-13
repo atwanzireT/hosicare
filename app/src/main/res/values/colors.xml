@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="gray_50">#f9fafb</color>
+    <color name="slate_700">#334155</color>
+    <color name="slate_800">#1e293b</color>
+    <color name="slate_900">#0f172a</color>
+    <color name="slate_950">#94a3b8</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="textColorPrimary">#212121</color>
-    <color name="grape">#6f2da8</color>
-    <color name="gray">#D9D9D9</color>
+    <color name="textColorPrimary">#000</color>
+    <color name="gray">#eee</color>
+
 </resources>

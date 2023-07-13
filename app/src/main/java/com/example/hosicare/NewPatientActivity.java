@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NewPatientActivity extends AppCompatActivity {
@@ -50,12 +51,14 @@ public class NewPatientActivity extends AppCompatActivity {
                  || TextUtils.isEmpty(usertpye) || TextUtils.isEmpty(sickof) || TextUtils.isEmpty(password)) {
                     Toast.makeText(NewPatientActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 } else {
+
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                FirebaseDatabase.getInstance().getReference("patients"  + FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(new Patient(username, firstname, lastname, email, usertpye, sickof, password))
+                                DatabaseReference patRef =  FirebaseDatabase.getInstance().getReference("patients");
+                                       String patID = patRef.push().getKey();
+                                        patRef.child(patID).setValue(new Patient(username, firstname, lastname, email, usertpye, sickof, password))
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

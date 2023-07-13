@@ -28,4 +28,12 @@ public class AdminPanelActivity extends AppCompatActivity {
     public void switchToPat(View view) {
         startActivity(new Intent(this, NewPatientActivity.class));
     }
+
+    public void switchToMed(View view) {
+        startActivity(new Intent(AdminPanelActivity.this, NewMedicineActivity.class));
+    }
+
+    public void switchToMedicine(View view) {
+        startActivity(new Intent(AdminPanelActivity.this, NewMedicineActivity.class));
+    }
 }

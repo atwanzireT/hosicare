@@ -2,12 +2,12 @@ package com.example.hosicare.modals;
 
 public class Tips {
     String title, details;
-    public Tips(){}
 
     public Tips(String title, String details) {
         this.title = title;
         this.details = details;
     }
+    public  Tips(){}
 
     public String getTitle() {
         return title;

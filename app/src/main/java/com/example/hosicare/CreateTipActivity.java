@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.hosicare.modals.Tips;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateTipActivity extends AppCompatActivity {
@@ -32,26 +33,30 @@ public class CreateTipActivity extends AppCompatActivity {
         title = titlefield.getText().toString();
         details = detailfield.getText().toString();
 
-        if (TextUtils.isEmpty(title) || (TextUtils.isEmpty(details))){
-            Toast.makeText(this, "All Fields must be filled .", Toast.LENGTH_SHORT).show();
-        }else{
-            FirebaseDatabase.getInstance().getReference("tips").setValue(new Tips(title, details))
+        if (TextUtils.isEmpty(title) || TextUtils.isEmpty(details)) {
+            Toast.makeText(this, "All fields must be filled.", Toast.LENGTH_SHORT).show();
+        } else {
+            DatabaseReference tipsRef = FirebaseDatabase.getInstance().getReference("tips");
+            String tipId = tipsRef.push().getKey(); // Generate a unique key for the tip
+
+            Tips newTip = new Tips(title, details);
+
+            tipsRef.child(tipId).setValue(newTip)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 Toast.makeText(CreateTipActivity.this, "New Tip Created", Toast.LENGTH_SHORT).show();
                                 titlefield.setText("");
                                 detailfield.setText("");
-                            }else{
-                                Toast.makeText(CreateTipActivity.this, "Unsuccessful .", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(CreateTipActivity.this, "Failed to create tip.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
         }
-
-
     }
+
 
 //    public void saveDataFunc(View view) {
 //    }

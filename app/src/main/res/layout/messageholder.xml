@@ -36,9 +36,9 @@
             android:layout_marginEnd="5dp"
             android:maxHeight="100dp"
             android:padding="5dp"
-            android:background="@color/grape"
+            android:background="@color/gray_50"
             tools:text="message message message"
-            android:textColor="@color/white"
+            android:textColor="@color/slate_900"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

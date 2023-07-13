@@ -1,14 +1,17 @@
 package com.example.hosicare.modals;
 
-public class Hospital {
+public class HospitalModal {
     String name, postoffice, location, level;
 
-    public Hospital(String name, String postoffice, String location, String level) {
+//    public HospitalModal(){};
+    public HospitalModal(String name, String postoffice, String location, String level) {
         this.name = name;
         this.postoffice = postoffice;
         this.location = location;
         this.level = level;
     }
+
+    public HospitalModal(){}
 
     public String getName() {
         return name;

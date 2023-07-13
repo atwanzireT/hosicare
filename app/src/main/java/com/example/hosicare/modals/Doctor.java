@@ -3,6 +3,7 @@ package com.example.hosicare.modals;
 public class Doctor {
     String username, firstname, lastname, email, usertype, specilist, password;
 
+    public Doctor(){};
     public Doctor(String username, String firstname, String lastname, String email, String usertype, String specilist, String password) {
         this.username = username;
         this.firstname = firstname;

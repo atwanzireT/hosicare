@@ -68,4 +68,8 @@ public class HomeActivity extends AppCompatActivity {
     public void switchToTip(View view) {
         startActivity(new Intent(this, TipsActivity.class));
     }
+
+    public void viewSearchList(View view) {
+        startActivity(new Intent(HomeActivity.this, SearchListActivity.class));
+    }
 }

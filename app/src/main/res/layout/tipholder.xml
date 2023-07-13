@@ -4,25 +4,53 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
-
-        <TextView
-            android:id="@+id/titleTxt"
-            android:layout_width="wrap_content"
+        android:background="@color/browser_actions_bg_grey"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="20dp"
+        android:layout_margin="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Title"/>
-        <TextView
-            android:id="@+id/detailTxt"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Title :"
+                android:textSize="24dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/tipTitleID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tip Title"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Detail"
-            android:textSize="16dp"/>
-
-
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Detail :"
+                android:textSize="24dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/tipDetailID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tip Details"
+                />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

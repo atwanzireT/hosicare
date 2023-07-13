@@ -14,31 +14,27 @@ import com.example.hosicare.modals.Tips;
 
 import java.util.ArrayList;
 
-public class TipAdaptor extends RecyclerView.Adapter<TipAdaptor.TipHolder>{
-    private ArrayList<Tips> tips;
-    private Context context;
-    private OnTipClickListener onTipClickListener;
+public class TipAdaptor extends RecyclerView.Adapter<TipAdaptor.TipHolder> {
+    Context context;
+    ArrayList<Tips> tips;
 
-    public interface OnTipClickListener{
-        void onTipClicked(int position);
-    }
 
-    public TipAdaptor(ArrayList<Tips> tips, Context context) {
-        this.tips = tips;
+    public TipAdaptor(Context context, ArrayList<Tips> tips) {
         this.context = context;
+        this.tips = tips;
     }
 
     @NonNull
     @Override
     public TipHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.tipholder, parent, false);
-        return new TipAdaptor.TipHolder(view);
+        return new TipHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TipHolder holder, int position) {
-        holder.titletxt.setText(tips.get(position).getTitle());
-        holder.detailtxt.setText(tips.get(position).getDetails());
+        holder.tiptitle.setText(tips.get(position).getTitle());
+        holder.tipdetail.setText(tips.get(position).getDetails());
     }
 
     @Override
@@ -46,13 +42,15 @@ public class TipAdaptor extends RecyclerView.Adapter<TipAdaptor.TipHolder>{
         return tips.size();
     }
 
-    class TipHolder extends RecyclerView.ViewHolder{
-        TextView titletxt, detailtxt;
+    public static class TipHolder extends RecyclerView.ViewHolder{
+        private TextView tiptitle;
+        private TextView tipdetail;
 
         public TipHolder(@NonNull View itemView) {
             super(itemView);
-            titletxt = itemView.findViewById(R.id.titleField);
-            detailtxt = itemView.findViewById(R.id.detailField);
+            tiptitle = itemView.findViewById(R.id.tipTitleID);
+            tipdetail = itemView.findViewById(R.id.tipDetailID);
+
         }
     }
 }

@@ -14,10 +14,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.example.hosicare.adaptor.TipAdaptor;
-import com.example.hosicare.adaptor.UsersAdaptor;
 import com.example.hosicare.modals.Tips;
-import com.example.hosicare.modals.User;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,20 +24,23 @@ import java.util.ArrayList;
 
 public class TipListsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private ArrayList<Tips> tips;
+    private ArrayList<Tips> list;
     private ProgressBar progressBar;
     private TipAdaptor tipAdaptor;
-    TipAdaptor.OnTipClickListener onTipClickListener;
     private SwipeRefreshLayout refreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        recyclerView = findViewById(R.id.tipRV);
-        progressBar = findViewById(R.id.tipprogressbar);
-        tips = new ArrayList<>();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_lists);
+
+        recyclerView = findViewById(R.id.tipRV);
+        list = new ArrayList<>();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        tipAdaptor = new TipAdaptor(this, list);
+        recyclerView.setAdapter(tipAdaptor);
+        getTips();
     }
 
     @Override
@@ -58,18 +58,16 @@ public class TipListsActivity extends AppCompatActivity {
     }
 
     private void getTips(){
-        tips.clear();
-        FirebaseDatabase.getInstance().getReference("user").addListenerForSingleValueEvent(new ValueEventListener() {
+        list.clear();
+        FirebaseDatabase.getInstance().getReference("tips")
+                .addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    tips.add(dataSnapshot.getValue(Tips.class));
+                    Tips tips = dataSnapshot.getValue(Tips.class);
+                    list.add(tips);
                 }
-                tipAdaptor = new TipAdaptor(tips, TipListsActivity.this);
-                recyclerView.setLayoutManager(new LinearLayoutManager(TipListsActivity.this));
-                recyclerView.setAdapter(tipAdaptor);
-                progressBar.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.VISIBLE);
+                tipAdaptor.notifyDataSetChanged();
             }
 
             @Override

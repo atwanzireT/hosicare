@@ -20,7 +20,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/textColorPrimary"
+                android:backgroundTint="@color/gray_50"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -28,17 +28,18 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:layout_margin="10dp">
+                    android:layout_margin="10dp"
+                    android:onClick="viewSearchList">
                     <ImageView
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:src="@drawable/baseline_search"
-                        app:tint="@color/white" />
+                        app:tint="@color/slate_700" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SEARCH"
-                        android:textColor="@color/white"
+                        android:textColor="@color/slate_900"
                         android:textSize="30dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -47,7 +48,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/textColorPrimary"
+                android:backgroundTint="@color/gray_50"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -60,12 +61,12 @@
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:src="@drawable/baseline_medical_services"
-                        app:tint="@color/white" />
+                        app:tint="@color/slate_700" />
                     <TextView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="MEDICINE"
-                        android:textColor="@color/white"
+                        android:textColor="@color/slate_900"
                         android:textSize="30dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -73,7 +74,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/textColorPrimary"
+                android:backgroundTint="@color/gray_50"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -87,12 +88,12 @@
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:src="@drawable/baseline_alarm"
-                        app:tint="@color/white" />
+                        app:tint="@color/slate_700" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ALARM"
-                        android:textColor="@color/white"
+                        android:textColor="@color/slate_900"
                         android:textSize="30dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -100,7 +101,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/textColorPrimary"
+                android:backgroundTint="@color/gray_50"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -114,12 +115,12 @@
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:src="@drawable/baseline_lightbulb"
-                        app:tint="@color/white" />
+                        app:tint="@color/slate_700" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TIPS"
-                        android:textColor="@color/white"
+                        android:textColor="@color/slate_900"
                         android:textSize="30dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -127,7 +128,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/textColorPrimary"
+                android:backgroundTint="@color/gray_50"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -141,12 +142,12 @@
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:src="@drawable/baseline_message"
-                        app:tint="@color/white" />
+                        app:tint="@color/slate_700" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CHATS"
-                        android:textColor="@color/white"
+                        android:textColor="@color/slate_900"
                         android:textSize="30dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -154,7 +155,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/textColorPrimary"
+                android:backgroundTint="@color/gray_50"
                 app:cardCornerRadius="20dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -168,12 +169,12 @@
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:src="@drawable/baseline_admin_panel_settings"
-                        app:tint="@color/white" />
+                        app:tint="@color/slate_700" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ADMIN"
-                        android:textColor="@color/white"
+                        android:textColor="@color/slate_900"
                         android:textSize="30dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

@@ -25,6 +25,7 @@ public class UsersAdaptor extends RecyclerView.Adapter<UsersAdaptor.UserHolder> 
         void onUserClicked(int position);
     }
 
+
     public UsersAdaptor(ArrayList<User> user, Context context, OnUserClickListener onUserClickListener) {
         this.user = user;
         this.context = context;

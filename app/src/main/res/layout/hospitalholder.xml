@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/browser_actions_bg_grey"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="20dp"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Name :"
+                android:textSize="24dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/hospNameID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Postoffice : "
+                android:textSize="24dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/postofficeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="postoffice"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Location : "
+                android:textSize="24dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/locationID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Level : "
+                android:textSize="24dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/levelID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="level"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -9,9 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.hosicare.modals.Hospital;
+import com.example.hosicare.modals.HospitalModal;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NewHospitalActivity extends AppCompatActivity {
@@ -40,7 +41,9 @@ public class NewHospitalActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(name) || (TextUtils.isEmpty(postoffice)) || (TextUtils.isEmpty(location)) || (TextUtils.isEmpty(level))){
             Toast.makeText(this, "All Fields must be filled .", Toast.LENGTH_SHORT).show();
         }else{
-            FirebaseDatabase.getInstance().getReference("hospital").setValue(new Hospital(name, postoffice, location, level))
+            DatabaseReference hospRef = FirebaseDatabase.getInstance().getReference("hospital");
+            String hospId = hospRef.push().getKey();
+            hospRef.child(hospId).setValue(new HospitalModal(name, postoffice, location, level))
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
