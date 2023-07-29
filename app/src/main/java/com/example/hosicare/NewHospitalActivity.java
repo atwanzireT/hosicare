@@ -43,7 +43,7 @@ public class NewHospitalActivity extends AppCompatActivity {
         }else{
             DatabaseReference hospRef = FirebaseDatabase.getInstance().getReference("hospital");
             String hospId = hospRef.push().getKey();
-            hospRef.child(hospId).setValue(new HospitalModal(name, postoffice, location, level))
+            hospRef.child(hospId).setValue(new HospitalModal(name, postoffice, location, level, hospId))
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

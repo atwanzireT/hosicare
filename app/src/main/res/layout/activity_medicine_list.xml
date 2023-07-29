@@ -5,27 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HospListActivity">
-
+    tools:context=".MedicineListActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Medicine List"
+        android:textColor="@color/slate_900"
+        android:textSize="24dp"
         android:layout_gravity="center"
-        android:text="Hospital List"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_marginVertical="10dp"/>
-
-    <ScrollView
+        android:textStyle="bold"/>
+    
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/hospRV"
-            android:layout_width="409dp"
-            android:layout_height="729dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp"
-            android:layout_marginHorizontal="10dp"/>
-    </ScrollView>
+            android:id="@+id/idMedList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

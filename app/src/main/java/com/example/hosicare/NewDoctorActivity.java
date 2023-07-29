@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hosicare.modals.Doctor;
@@ -20,10 +21,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NewDoctorActivity extends AppCompatActivity {
-    EditText usernamefield, fnamefield, lnamefield, emailfield, usertypefield, specilistfield, passwordfield;
-    String username, firstname, lastname, email, usertype, specilist, password;
+    EditText usernamefield, fnamefield, lnamefield, emailfield, usertypefield, specilistfield, availablefield, passwordfield;
+    String username, firstname, lastname, email, usertype, specilist, password, hosp_id, available;
     Button savebtn;
     FirebaseAuth mAuth;
+    TextView idtxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,12 @@ public class NewDoctorActivity extends AppCompatActivity {
         specilistfield = findViewById(R.id.docSpecialismField);
         passwordfield = findViewById(R.id.docPwdField);
         savebtn = findViewById(R.id.docSaveBtn);
+        availablefield = findViewById(R.id.docAvailableField);
+        idtxt = findViewById(R.id.hosIDTxt);
+        hosp_id =  getIntent().getStringExtra(HospitalDetailActivity.EXTRA_HOSP_ID);
+        idtxt.setText(hosp_id);
+
+
 
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +57,9 @@ public class NewDoctorActivity extends AppCompatActivity {
                 usertype = usertypefield.getText().toString();
                 specilist = specilistfield.getText().toString();
                 password = passwordfield.getText().toString();
+                available = availablefield.getText().toString();
                 mAuth = FirebaseAuth.getInstance();
+
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(firstname) || TextUtils.isEmpty(lastname) || TextUtils.isEmpty(email)
                         || TextUtils.isEmpty(usertype) || TextUtils.isEmpty(specilist) || TextUtils.isEmpty(password)) {
                     Toast.makeText(NewDoctorActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
@@ -60,7 +70,7 @@ public class NewDoctorActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
                                 DatabaseReference docRef = FirebaseDatabase.getInstance().getReference("doctors");
                                 String docId = docRef.push().getKey();
-                                        docRef.child(docId).setValue(new Doctor(username, firstname, lastname, email, usertype, specilist, password))
+                                        docRef.child(docId).setValue(new Doctor(username, firstname, lastname, email, usertype, specilist, available, hosp_id ))
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {

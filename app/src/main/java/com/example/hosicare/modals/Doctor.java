@@ -1,17 +1,19 @@
 package com.example.hosicare.modals;
 
 public class Doctor {
-    String username, firstname, lastname, email, usertype, specilist, password;
+    String username, firstname, lastname, email, usertype, specilist, availability, hospitalid;
 
-    public Doctor(){};
-    public Doctor(String username, String firstname, String lastname, String email, String usertype, String specilist, String password) {
+    public Doctor(){}
+
+    public Doctor(String username, String firstname, String lastname, String email, String usertype, String specilist, String availability, String hospitalid) {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.usertype = usertype;
         this.specilist = specilist;
-        this.password = password;
+        this.availability = availability;
+        this.hospitalid = hospitalid;
     }
 
     public String getUsername() {
@@ -62,11 +64,19 @@ public class Doctor {
         this.specilist = specilist;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAvailability() {
+        return availability;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    public String getHospitalid() {
+        return hospitalid;
+    }
+
+    public void setHospitalid(String hospitalid) {
+        this.hospitalid = hospitalid;
     }
 }

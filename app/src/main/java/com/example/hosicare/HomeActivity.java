@@ -70,6 +70,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void viewSearchList(View view) {
-        startActivity(new Intent(HomeActivity.this, SearchListActivity.class));
+        startActivity(new Intent(HomeActivity.this, HospListActivity.class));
+    }
+
+    public void switchToMedList(View view) {
+        startActivity(new Intent(HomeActivity.this, MedicineListActivity.class));
     }
 }

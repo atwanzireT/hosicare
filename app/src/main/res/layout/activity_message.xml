@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MessageActivity">
+    tools:context=".MessageActivity"
+    android:background="@color/white"
+    >
 
     <LinearLayout
         android:id="@+id/linearlayout"
@@ -58,7 +60,6 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
-        android:background="@color/gray"
         android:clipToPadding="false"
         android:padding="5dp" />
 

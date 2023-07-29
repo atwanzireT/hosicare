@@ -35,8 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:maxHeight="100dp"
-            android:padding="5dp"
-            android:background="@color/gray_50"
+            android:padding="8dp"
+            android:background="@drawable/message_bg"
             tools:text="message message message"
             android:textColor="@color/slate_900"
             tools:ignore="MissingConstraints" />

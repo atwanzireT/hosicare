@@ -18,15 +18,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:text="Name :"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/slate_900"
                 />
             <TextView
-                android:id="@+id/hospNameID"
+                android:id="@+id/docNameID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="name"
@@ -38,18 +38,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:text="Postoffice : "
-                android:textSize="24dp"
+                android:text="Firstname :"
+                android:textSize="20dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/slate_900"
                 />
             <TextView
-                android:id="@+id/postofficeID"
+                android:id="@+id/docfirstnameID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="postoffice"
+                android:text="name"
                 android:textSize="20dp"
                 />
         </LinearLayout>
@@ -58,18 +58,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:text="Location : "
-                android:textSize="24dp"
+                android:text="Lastname :"
+                android:textSize="20dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/slate_900"
                 />
             <TextView
-                android:id="@+id/locationID"
+                android:id="@+id/doclastnameID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Location"
+                android:text="Lastname"
                 android:textSize="20dp"
                 />
         </LinearLayout>
@@ -78,15 +78,55 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:text="Level : "
-                android:textSize="24dp"
+                android:text="Specialisation : "
+                android:textSize="20dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/slate_900"
                 />
             <TextView
-                android:id="@+id/levelID"
+                android:id="@+id/docspeciID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specialisation"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Email : "
+                android:textSize="20dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/docemailID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Available : "
+                android:textSize="20dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/slate_900"
+                />
+            <TextView
+                android:id="@+id/docAvailID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="level"

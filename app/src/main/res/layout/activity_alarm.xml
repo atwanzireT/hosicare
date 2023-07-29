@@ -1,27 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
     tools:context=".AlarmActivity">
 
+    <!-- TimePicker to select the alarm time -->
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/textColorPrimary"/>
+        android:timePickerMode="spinner"
+        android:backgroundTint="@color/gray_50" />
 
-    <!--Added Toggle Button to set the alarm on or off-->
-    <!--ByDefault toggleButton is set to false-->
+    <!-- Label for the TimePicker -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Set Alarm Time"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp" />
+
+    <!-- ToggleButton to set the alarm on or off -->
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
         android:checked="false"
-        android:onClick="OnToggleClicked" />
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:background="@color/slate_700"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
 
 </LinearLayout>

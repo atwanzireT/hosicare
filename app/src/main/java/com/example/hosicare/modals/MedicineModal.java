@@ -9,6 +9,7 @@ public class MedicineModal {
         this.treatment = treatment;
     }
 
+    public MedicineModal(){}
     public String getName() {
         return name;
     }
